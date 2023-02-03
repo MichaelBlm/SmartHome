@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "425278974018",
+    "project_id": "gestureapplication-b110c",
+    "storage_bucket": "gestureapplication-b110c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425278974018:android:c4481381bb0850bc60a5db",
+        "android_client_info": {
+          "package_name": "com.example.gestureapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425278974018-9olm1d86c7ofnq7rl812q5trnpa6vcbq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA00ZxTwnB136LvQeJ0Ao-A4xZqKO9A9ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425278974018-9olm1d86c7ofnq7rl812q5trnpa6vcbq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425278974018:android:a8c225331a93f20460a5db",
+        "android_client_info": {
+          "package_name": "michael.example.com.smarthome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425278974018-9olm1d86c7ofnq7rl812q5trnpa6vcbq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA00ZxTwnB136LvQeJ0Ao-A4xZqKO9A9ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425278974018-9olm1d86c7ofnq7rl812q5trnpa6vcbq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
