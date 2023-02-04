@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toStartOf="@id/vertical_centerline" />
 
     <Button
-        android:id="@+id/image_capture_button"
+        android:id="@+id/upload_button"
         android:text="Upload"
         android:layout_width="110dp"
         android:layout_height="110dp"

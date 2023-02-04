@@ -79,7 +79,7 @@ class CameraPreview : AppCompatActivity() {
         }
 
         // Set up the listeners for take photo and video capture buttons
-        viewBinding.imageCaptureButton.setOnClickListener {
+        viewBinding.uploadButton.setOnClickListener {
         startFileChooser()
 
         }
@@ -116,9 +116,9 @@ class CameraPreview : AppCompatActivity() {
             pd.setTitle("Uploading")
             pd.show()
             var filename: String = if (intent.getStringExtra("choice")?.isDigitsOnly() == true) {
-                "videos/" + "Num" + intent.getStringExtra("choice") + "_PRACTICE_" + (count-1) + "Blumberg"
+                "videos/" + "Num" + intent.getStringExtra("choice") + "_PRACTICE_" + (count++) + "Blumberg"
             } else {
-                "videos/" + "H-" + intent.getStringExtra("choice") + "_PRACTICE_" + (count-1) + "Blumberg"
+                "videos/" + "H-" + intent.getStringExtra("choice") + "_PRACTICE_" + (count++) + "Blumberg"
             }
             var videoRef = FirebaseStorage.getInstance().reference.child(filename)
 
@@ -134,8 +134,8 @@ class CameraPreview : AppCompatActivity() {
                     }
                     .addOnProgressListener { p0 ->
                         var progress = (100.0 * p0.bytesTransferred) / p0.totalByteCount
-//                        pd.setMessage("Uploaded ${progress.toInt()}%")
-                        Toast.makeText(applicationContext, "Uploaded ${progress.toInt()}%", Toast.LENGTH_SHORT).show()
+                        pd.setMessage("Uploaded ${progress.toInt()}%")
+
                     }
         }
     }
@@ -155,23 +155,17 @@ class CameraPreview : AppCompatActivity() {
             return
         }
 
-
         // create and start a new recording session
+        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.US)
+            .format(System.currentTimeMillis())
         val contentValues = ContentValues().apply {
-            if (intent.getStringExtra("choice") != null) {
-                if(intent.getStringExtra("choice")!!.isDigitsOnly()) {
-                    put(MediaStore.MediaColumns.DISPLAY_NAME, "Num" + intent.getStringExtra("choice") + "_PRACTICE_" + count)
-                }
-                else{
-                    put(MediaStore.MediaColumns.DISPLAY_NAME, intent.getStringExtra("choice") + "_PRACTICE_" + count);
-                }
-                count++
-            }
+            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
             put(MediaStore.MediaColumns.MIME_TYPE, "video/mp4")
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
-                put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/GesturePractice")
+                put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/CameraX-Video")
             }
         }
+
 
         val mediaStoreOutputOptions = MediaStoreOutputOptions
                 .Builder(contentResolver, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
