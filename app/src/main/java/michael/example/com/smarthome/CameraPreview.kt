@@ -126,6 +126,8 @@ class CameraPreview : AppCompatActivity() {
                     .addOnSuccessListener {
                         pd.dismiss()
                         Toast.makeText(applicationContext, "File Uploaded", Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, GesturePreivew::class.java)
+                        startActivity(intent);
                     }
                     .addOnFailureListener{p0->
                         pd.dismiss()
