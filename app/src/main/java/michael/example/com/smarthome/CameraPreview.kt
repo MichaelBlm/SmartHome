@@ -116,9 +116,9 @@ class CameraPreview : AppCompatActivity() {
             pd.setTitle("Uploading")
             pd.show()
             var filename: String = if (intent.getStringExtra("choice")?.isDigitsOnly() == true) {
-                "videos/" + "Num" + intent.getStringExtra("choice") + "_PRACTICE_" + (count++) + "Blumberg"
+                "videos/" + "Num" + intent.getStringExtra("choice") + "_PRACTICE_" + (count++) + "_Blumberg"
             } else {
-                "videos/" + "H-" + intent.getStringExtra("choice") + "_PRACTICE_" + (count++) + "Blumberg"
+                "videos/" + "H-" + intent.getStringExtra("choice") + "_PRACTICE_" + (count++) + "_Blumberg"
             }
             var videoRef = FirebaseStorage.getInstance().reference.child(filename)
 
